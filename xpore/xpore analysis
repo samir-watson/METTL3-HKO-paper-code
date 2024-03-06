@@ -1,15 +1,17 @@
 # change the code for each sample
 
-#!/bin/bash
-#SBATCH --partition normal
-#SBATCH --mem 24G
-#SBATCH --account nanopore_drs
-#SBATCH -c 20
-#SBATCH -t 10:00:00
-
 xpore dataprep \
 --eventalign /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/A56_1.m6anet.eventalign.txt \
 --gtf_or_gff /home/samirwatson/faststorage/NAT10/gencode.v33.annotation.gtf \
 --transcript_fasta /home/samirwatson/faststorage/NAT10/gencode.v33.transcripts_shorthead.fa \
 --out_dir /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/A56.1/ \
 --n_processes 20
+
+#next create yaml config file as instructed by xpore
+
+#run diffmod
+xpore diffmod --config /home/samirwatson/faststorage/METTL3/DRS_data/xpore/diff_mod/all_KO/all_KO.yaml \
+--n_processes 30
+
+#run postprocessing
+xpore postprocessing --diffmod_dir /home/samirwatson/faststorage/METTL3/DRS_data/xpore/diff_mod/all_KO
