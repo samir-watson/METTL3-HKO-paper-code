@@ -1,0 +1,32 @@
+data:
+    WT:
+        REP1: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/WT.1
+        REP2: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/WT.2
+        REP3: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/WT.3
+
+    KO:
+        REP1: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/A56.1
+        REP2: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/A56.2
+        REP3: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/A56.3
+        REP4: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/B46.1
+        REP5: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/B46.2
+        REP6: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/B46.3
+
+out: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/diff_mod/all_KO
+
+criteria:
+    readcount_min: 15
+    readcount_max: 1000
+
+method:
+    # To speed up xpore-diffmod, you can use a statistical test (currently only t-test is implemented) can be used
+    # to remove positions that are unlikely to be differentially modified. So, xpore-diffmod will model only
+    # those significant positions by the statistical test -- usually the P_VALUE_THRESHOLD very high e.g. 0.1.
+    # If you want xPore to test every genomic/transcriptomic position, please remove this prefiltering section.
+    prefiltering:
+        method: t-test
+        threshold: 0.1
+
+    # Here are the parameters for Bayesian inference. The default values shown in  are used, if not specified.
+    max_iters: 500
+    stopping_criteria: 0.00001
