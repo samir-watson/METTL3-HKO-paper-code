@@ -1,8 +1,6 @@
-########################################################################################################
-##########            IMPORTANT  -  This nanopolish script is for nanocompore only       ###############
-########################################################################################################
 
 #Nanopolish script, mapping with minimap2 to transcriptome includes nanopolishcomp script for nanocompore
+#important - output of this nanopolish is not compatible with xpore or m6anet for those run "nanopolish for xpore and m6anet after this"
 
 #note for the genome file we used gencode and shortened the headings, only keeping the transcript ids with version duie to downstream incomaptibilities with the pipes in the the headers - gencode.v33.transcripts_shorthead.fa
 ########################
