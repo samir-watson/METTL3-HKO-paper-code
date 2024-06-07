@@ -1,11 +1,4 @@
-#perpare data - do this for each sample
-nanopolish eventalign --reads /home/samirwatson/faststorage/METTL3/DRS_data/basecalled/basecalled_A56_1.fastq \
---bam /home/samirwatson/faststorage/METTL3/DRS_data/nanocompore/DRS_METTL3_A56_1.aligned.bam \
---genome /home/samirwatson/faststorage/GFP_DRS/GFP_genomes/2GFP+gencode.v33.transcripts_shorthead.fa \
---scale-events \
---signal-index \
---summary /home/samirwatson/faststorage/METTL3/DRS_data/A56_1_HQcalls/sequencing_summary.txt  \
---threads 30 > /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/a56_1.m6anet.eventalign.txt
+#first run nanopolish for xpore and m6anet script. run this script for each sample
 
 #run m6anets dataprep - run for each sample
 m6anet dataprep --eventalign /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/A56_1.m6anet.eventalign.txt \
