@@ -8,11 +8,8 @@ data:
         REP1: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/A56.1
         REP2: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/A56.2
         REP3: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/A56.3
-        REP4: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/B46.1
-        REP5: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/B46.2
-        REP6: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/preprocess/B46.3
 
-out: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/diff_mod/all_KO
+out: /home/samirwatson/faststorage/METTL3/DRS_data/xpore/diff_mod/A56
 
 criteria:
     readcount_min: 15
