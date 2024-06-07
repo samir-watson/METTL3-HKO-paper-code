@@ -3,12 +3,12 @@ library(viridis)
 library(pheatmap)
 
 
-basedir <- ("C:/Users/au656873/OneDrive - Aarhus Universitet/Desktop/METTL3/xpore/all_KO")
+basedir <- ("C:/Users/au656873/OneDrive - Aarhus Universitet/Desktop/METTL3/xpore/A56")
 setwd(basedir)
 dir()
 
 # Read the data from the CSV file
-data <- read_csv("all_KO_filtered_majority_direction_kmer_diffmod_with_gene_names_sorted_filtered.table")
+data <- read_csv("A56_filtered_majority_direction_kmer_diffmod_with_gene_names_sorted_filtered.table")
 head(data)
 
 # Count the occurrences of each k-mer
@@ -26,9 +26,9 @@ top_kmers <- kmer_counts %>%
 data <- data %>%
   mutate(kmer = ifelse(kmer %in% top_kmers, kmer, "others"))
 
-# Now filter the top 25 genes
+# Now filter the top 50 genes
 top_genes <- data %>%
-  arrange(desc(diff_mod_rate_WT_vs_xKO)) %>%
+  arrange(desc(diff_mod_rate_WT_vs_xKO.A56)) %>%
   slice_head(n = 50)
 
 # Get the order of gene names
@@ -54,5 +54,4 @@ p <- ggplot(kmer_counts, aes(y = kmer, x = gene_name, fill = count)) +
 p
 
 # Save the plot as a PNG file with 300 dpi
-ggsave("kmer_counts_per_gene_xpore1.png", dpi = 300, bg = "white", width = 11, height =3)
-
+ggsave("A56_kmer_counts_per_gene_xpore1.png", dpi = 300, bg = "white", width = 11, height =3)
