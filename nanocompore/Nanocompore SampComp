@@ -1,3 +1,4 @@
+#must first run "map_align_nanoplishcomp"
 #!/usr/bin/bash
 #SBATCH --partition normal
 #SBATCH --mem-per-cpu 16G
