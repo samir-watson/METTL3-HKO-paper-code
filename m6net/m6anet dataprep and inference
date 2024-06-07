@@ -1,4 +1,4 @@
-#first run nanopolish for xpore and m6anet script. run this script for each sample
+#first run "nanopolish for xpore and m6anet script". run this script for each sample
 
 #run m6anets dataprep - run for each sample
 m6anet dataprep --eventalign /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/A56_1.m6anet.eventalign.txt \
