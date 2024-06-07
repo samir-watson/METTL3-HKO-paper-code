@@ -1,5 +1,5 @@
 # nanopolish specifically for both xpore and m6anet - inclusion of scale index and signal index # this code was ran after mapping with minimap2 so no need to realign
-
+# run after running map_align_nanopolishcomp
 ########################
 A56_1
 ########################
