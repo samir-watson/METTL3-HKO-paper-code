@@ -3,17 +3,16 @@ library(viridis)
 library(pheatmap)
 
 
-basedir <- ("C:/Users/au656873/OneDrive - Aarhus Universitet/Desktop/METTL3/xpore/all_KO")
+basedir <- ("C:/Users/au656873/OneDrive - Aarhus Universitet/Desktop/METTL3/xpore/a56")
 setwd(basedir)
 dir()
 
 # Read the data from the CSV file
-data <- read_csv("all_KO_filtered_majority_direction_kmer_diffmod_with_gene_names_sorted_filtered.strict.table")
+data <- read_csv("a56_filtered_majority_direction_kmer_diffmod_with_gene_names_sorted_filtered.strict.table")
 
 # Specify the columns you're interested in
 cols_to_plot <- c("gene_name", "mod_rate_WT-REP1", "mod_rate_WT-REP2", "mod_rate_WT-REP3", 
-                  "mod_rate_xKO-REP1", "mod_rate_xKO-REP2", "mod_rate_xKO-REP3", 
-                  "mod_rate_xKO-REP4", "mod_rate_xKO-REP5", "mod_rate_xKO-REP6")
+                  "mod_rate_xKO-REP1", "mod_rate_xKO-REP2", "mod_rate_xKO-REP3")
 
 # Subset the data to include only the columns of interest
 data_to_plot <- data[cols_to_plot]
@@ -31,10 +30,7 @@ data_to_plot <- rename(data_to_plot,
                        "WT_REP3" = "mod_rate_WT-REP3",
                        "HKO_1_REP1" = "mod_rate_xKO-REP1",
                        "HKO_1_REP2" = "mod_rate_xKO-REP2",
-                       "HKO_1_REP3" = "mod_rate_xKO-REP3",
-                       "HKO_2_REP1" = "mod_rate_xKO-REP4",
-                       "HKO_2_REP2" = "mod_rate_xKO-REP5",
-                       "HKO_2_REP3" = "mod_rate_xKO-REP6")
+                       "HKO_1_REP3" = "mod_rate_xKO-REP3")
 
 # Start the PNG device
 png("final heatmap.strict.no.border.png", res = 300, width = 2000, height = 2000)
