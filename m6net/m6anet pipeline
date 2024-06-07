@@ -1,18 +1,18 @@
 #perpare data - do this for each sample
-nanopolish eventalign --reads /home/samirwatson/faststorage/METTL3/DRS_data/basecalled/basecalled_B46_1.fastq \
---bam /home/samirwatson/faststorage/METTL3/DRS_data/nanocompore/DRS_METTL3_B46_1.aligned.bam \
+nanopolish eventalign --reads /home/samirwatson/faststorage/METTL3/DRS_data/basecalled/basecalled_A56_1.fastq \
+--bam /home/samirwatson/faststorage/METTL3/DRS_data/nanocompore/DRS_METTL3_A56_1.aligned.bam \
 --genome /home/samirwatson/faststorage/GFP_DRS/GFP_genomes/2GFP+gencode.v33.transcripts_shorthead.fa \
 --scale-events \
 --signal-index \
---summary /home/samirwatson/faststorage/METTL3/DRS_data/B46_1_HQcalls/sequencing_summary.txt  \
---threads 30 > /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/B46_1.m6anet.eventalign.txt
+--summary /home/samirwatson/faststorage/METTL3/DRS_data/A56_1_HQcalls/sequencing_summary.txt  \
+--threads 30 > /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/a56_1.m6anet.eventalign.txt
 
 #run m6anets dataprep - run for each sample
-m6anet dataprep --eventalign /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/B46_1.m6anet.eventalign.txt \
---out_dir /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/b46.1 --n_processes 18
+m6anet dataprep --eventalign /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/A56_1.m6anet.eventalign.txt \
+--out_dir /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/a56.1 --n_processes 18
 
 #run m6anet inference - run for each sample
-m6anet inference --input_dir /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/b46.1 /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/b46.2 /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/b46.3 \
---out_dir /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/inference/b46 \
+m6anet inference --input_dir /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/a56.1 /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/a56.2 /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/a56.3 \
+--out_dir /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/inference/a56 \
 --n_processes 12 \
 --num_iterations 1000
