@@ -1,3 +1,5 @@
+#must first run "nanopolish for xpore and m6anet" script
+
 #!/bin/bash
 #SBATCH --partition normal
 #SBATCH --mem 24G
