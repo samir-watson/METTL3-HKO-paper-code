@@ -1,5 +1,5 @@
 # change the code for each sample
-#must first run "nanopolish for xpore and m6anet" script
+
 
 #!/bin/bash
 #SBATCH --partition normal
