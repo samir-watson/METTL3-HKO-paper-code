@@ -5,6 +5,8 @@
 #SBATCH -c 20
 #SBATCH -t 10:00:00
 
+#must do this for each replicate for WT and KO
+
 xpore dataprep \
 --eventalign /home/samirwatson/faststorage/METTL3/DRS_data/m6anet/preprocess/A56_1.m6anet.eventalign.txt \
 --gtf_or_gff /home/samirwatson/faststorage/NAT10/gencode.v33.annotation.gtf \
