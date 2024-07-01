@@ -14,6 +14,7 @@ singularity exec --nv guppy4-0-11.simg guppy_basecaller -i /home/samirwatson/fas
 --flowcell FLO-MIN106 \
 --kit SQK-RNA002 \
 -r \
+--fast5_out \
 --calib_detect \
 --enable_trimming true \
 --trim_strategy rna \
